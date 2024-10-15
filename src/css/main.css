@@ -757,6 +757,17 @@ when needed.
     opacity: 1;
   }
 }
+@keyframes animateCelebrate {
+  0% {
+    background-position: 0% 47%;
+  }
+  50% {
+    background-position: 100% 54%;
+  }
+  100% {
+    background-position: 0% 47%;
+  }
+}
 /*───────────────────────────────────
         Non-Color Variables
 ───────────────────────────────────*/
@@ -1645,14 +1656,17 @@ body.is-mobile {
   --callout-border-width: 0px;
   --callout-color-opacity: 32.5%;
   --callout-border-opacity: 0.2;
-  --callout-icon-fold-filter: brightness(0.8);
-  --callout-title-filter: brightness(0.6);
+  --callout-icon-fold-filter: brightness(0.7);
+  --callout-title-filter: brightness(0.5);
   --callout-title-color: var(--text-normal);
   --callout-content-background: color-mix(
       in srgb,
       var(--background-primary-alt) 50%,
       var(--background-primary)
   );
+  --callout-celebrate-color-1: var(--color-l-blue-10);
+  --callout-celebrate-color-2: var(--color-l-yellow-10);
+  --callout-celebrate-color-3: var(--color-l-red-10);
   --callout-container-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.08),
       0px 1px 6px 0px rgba(0, 0, 0, 0.12);
   --callout-title-shadow: inset 0px -1px 0px 0px rgba(0, 0, 0, 0.05),
@@ -2934,15 +2948,20 @@ body.is-mobile {
   --blockquote-border-color: var(--background-modifier-border);
   --blockquote-background-color: var(--color-d-gray-120);
   /* Callout */
+  --callout-border-width: 0px;
   --callout-color-opacity: 32.5%;
   --callout-border-opacity: 0.1;
   --callout-icon-fold-filter: brightness(1);
+  --callout-title-filter: brightness(1.2);
   --callout-title-color: var(--text-normal);
   --callout-content-background: color-mix(
       in srgb,
       var(--background-primary-alt) 50%,
       var(--editor-bg-color)
   );
+  --callout-celebrate-color-1: var(--color-d-blue-10);
+  --callout-celebrate-color-2: var(--color-d-yellow-10);
+  --callout-celebrate-color-3: var(--color-d-red-10);
   --callout-container-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
       0px 2px 6px 0px rgba(0, 0, 0, 0.28);
   --callout-title-shadow: inset 0px -1px 1px 0px rgba(0, 0, 0, 0.25),
@@ -6126,6 +6145,27 @@ body {
   --callout-icon-example: scroll-text;
   --callout-icon-quote: message-square-note;
   --callout-icon-cite: book-marked;
+  --callout-icon-archive: archive;
+  --callout-icon-law: scale;
+  --callout-icon-pro: thumbs-up;
+  --callout-icon-con: thumbs-down;
+  --callout-icon-idea: lightbulb;
+  --callout-icon-formula: calculator;
+  --callout-icon-related: shuffle;
+  --callout-icon-celebrate: party-popper;
+  --callout-icon-money: circle-dollar-sign;
+  --callout-icon-backlog: layers-3;
+  --callout-icon-in-progress: circle-dashed;
+  --callout-icon-target: target;
+  --callout-icon-resources: library-big;
+  --callout-icon-links: link;
+  --callout-icon-world: sparkles;
+  --callout-icon-backstory: history;
+  --callout-icon-conflict: swords;
+  --callout-icon-challenge: sword;
+  --callout-icon-encounter: rabbit;
+  --callout-icon-translation: languages;
+  --callout-icon-spoiler: eye-off;
   --callout-rgb-general: 182, 196, 182;
   --callout-rgb-note: 200, 175, 155;
   --callout-rgb-summary: 234, 181, 52;
@@ -6153,6 +6193,28 @@ body {
   --callout-rgb-example: 216, 141, 130;
   --callout-rgb-quote: 173, 214, 171;
   --callout-rgb-cite: 237, 217, 162;
+  --callout-rgb-archive: 170, 136, 82;
+  --callout-rgb-law: 189, 123, 68;
+  --callout-rgb-pro: 57, 169, 80;
+  --callout-rgb-con: 221, 65, 71;
+  --callout-rgb-idea: 243, 161, 56;
+  --callout-rgb-formula: 105, 219, 209;
+  --callout-rgb-related: 175, 213, 173;
+  --callout-rgb-celebrate: 156, 129, 106;
+  --callout-celebrate-color: linear-gradient(45deg, #ef92af70, #7bd7e970, #81e1a570, #ffda2b70);
+  --callout-rgb-money: 126, 208, 122;
+  --callout-rgb-backlog: 170, 136, 82;
+  --callout-rgb-in-progress: 244, 220, 19;
+  --callout-rgb-target: 231, 143, 37;
+  --callout-rgb-resources: 182, 93, 150;
+  --callout-rgb-links: 93, 169, 200;
+  --callout-rgb-world: 255, 199, 160;
+  --callout-rgb-backstory: 70, 206, 185;
+  --callout-rgb-conflict: 195, 33, 77;
+  --callout-rgb-challenge: 216, 141, 130;
+  --callout-rgb-encounter: 137, 192, 108;
+  --callout-rgb-translation: 242, 169, 200;
+  --callout-rgb-spoiler: 156, 129, 106;
 }
 
 .callout {
@@ -6258,6 +6320,98 @@ body {
 .callout[data-callout=cite] {
   --callout-icon: var(--callout-icon-cite);
   --callout-color: var(--callout-rgb-cite);
+}
+.callout[data-callout=archive] {
+  --callout-icon: var(--callout-icon-archive);
+  --callout-color: var(--callout-rgb-archive);
+}
+.callout[data-callout=law] {
+  --callout-icon: var(--callout-icon-law);
+  --callout-color: var(--callout-rgb-law);
+}
+.callout[data-callout=pro] {
+  --callout-icon: var(--callout-icon-pro);
+  --callout-color: var(--callout-rgb-pro);
+}
+.callout[data-callout=con] {
+  --callout-icon: var(--callout-icon-con);
+  --callout-color: var(--callout-rgb-con);
+}
+.callout[data-callout=idea] {
+  --callout-icon: var(--callout-icon-idea);
+  --callout-color: var(--callout-rgb-idea);
+}
+.callout[data-callout=formula] {
+  --callout-icon: var(--callout-icon-formula);
+  --callout-color: var(--callout-rgb-formula);
+}
+.callout[data-callout=related] {
+  --callout-icon: var(--callout-icon-related);
+  --callout-color: var(--callout-rgb-related);
+}
+.callout[data-callout=celebrate] {
+  --callout-icon: var(--callout-icon-celebrate);
+  --callout-color: var(--callout-rgb-celebrate);
+  background: var(--callout-celebrate-color);
+  background-size: 800% 800%;
+  animation: animateCelebrate 15s ease infinite;
+}
+.callout[data-callout=money] {
+  --callout-icon: var(--callout-icon-money);
+  --callout-color: var(--callout-rgb-money);
+}
+.callout[data-callout=backlog] {
+  --callout-icon: var(--callout-icon-backlog);
+  --callout-color: var(--callout-rgb-backlog);
+}
+.callout[data-callout=in-progress] {
+  --callout-icon: var(--callout-icon-in-progress);
+  --callout-color: var(--callout-rgb-in-progress);
+}
+.callout[data-callout=target] {
+  --callout-icon: var(--callout-icon-target);
+  --callout-color: var(--callout-rgb-target);
+}
+.callout[data-callout=resources] {
+  --callout-icon: var(--callout-icon-resources);
+  --callout-color: var(--callout-rgb-resources);
+}
+.callout[data-callout=links] {
+  --callout-icon: var(--callout-icon-links);
+  --callout-color: var(--callout-rgb-links);
+}
+.callout[data-callout=world] {
+  --callout-icon: var(--callout-icon-world);
+  --callout-color: var(--callout-rgb-world);
+}
+.callout[data-callout=backstory] {
+  --callout-icon: var(--callout-icon-backstory);
+  --callout-color: var(--callout-rgb-backstory);
+}
+.callout[data-callout=conflict] {
+  --callout-icon: var(--callout-icon-conflict);
+  --callout-color: var(--callout-rgb-conflict);
+}
+.callout[data-callout=challenge] {
+  --callout-icon: var(--callout-icon-challenge);
+  --callout-color: var(--callout-rgb-challenge);
+}
+.callout[data-callout=encounter] {
+  --callout-icon: var(--callout-icon-encounter);
+  --callout-color: var(--callout-rgb-encounter);
+}
+.callout[data-callout=translation] {
+  --callout-icon: var(--callout-icon-translation);
+  --callout-color: var(--callout-rgb-translation);
+}
+.callout[data-callout=spoiler] {
+  background: transparent;
+  --callout-icon: var(--callout-icon-spoiler);
+  --callout-color: var(--callout-rgb-spoiler);
+  --callout-title-shadow: none;
+  --callout-content-shadow: none;
+  --callout-container-shadow: none;
+  --callout-content-background: none;
 }
 
 /*────────── Code ──────────*/

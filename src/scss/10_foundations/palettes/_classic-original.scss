@@ -95,6 +95,12 @@ when needed.
     }
 }
 
+@keyframes animateCelebrate {
+    0% { background-position:0% 47% }
+    50% { background-position:100% 54% }
+    100% { background-position:0% 47% }
+}
+
 /*───────────────────────────────────
         Non-Color Variables
 ───────────────────────────────────*/
@@ -1167,8 +1173,8 @@ body {
     --callout-border-width: 0px;
     --callout-color-opacity: 32.5%;
     --callout-border-opacity: 0.2;
-    --callout-icon-fold-filter: brightness(0.8);
-    --callout-title-filter: brightness(0.6);
+    --callout-icon-fold-filter: brightness(0.7);
+    --callout-title-filter: brightness(0.5);
 
     --callout-title-color: var(--text-normal);
     --callout-content-background: color-mix(
@@ -1176,6 +1182,10 @@ body {
         var(--background-primary-alt) 50%,
         var(--background-primary)
     );
+
+    --callout-celebrate-color-1: var(--color-l-blue-10);
+    --callout-celebrate-color-2: var(--color-l-yellow-10);
+    --callout-celebrate-color-3: var(--color-l-red-10);
 
     --callout-container-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.08),
         0px 1px 6px 0px rgba(0, 0, 0, 0.12);
@@ -2659,9 +2669,11 @@ body {
     --blockquote-background-color: var(--color-d-gray-120);
 
     /* Callout */
+    --callout-border-width: 0px;
     --callout-color-opacity: 32.5%;
     --callout-border-opacity: 0.1;
     --callout-icon-fold-filter: brightness(1);
+    --callout-title-filter: brightness(1.2);
 
     --callout-title-color: var(--text-normal);
     --callout-content-background: color-mix(
@@ -2669,6 +2681,10 @@ body {
         var(--background-primary-alt) 50%,
         var(--editor-bg-color)
     );
+
+    --callout-celebrate-color-1: var(--color-d-blue-10);
+    --callout-celebrate-color-2: var(--color-d-yellow-10);
+    --callout-celebrate-color-3: var(--color-d-red-10);
 
     --callout-container-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.18),
         0px 2px 6px 0px rgba(0, 0, 0, 0.28);
