@@ -1,9 +1,6 @@
 {
-  "name": "Primary",
-  "version": "2.11.0",
+  "name": "Primary Fork",
+  "version": "2.12.0",
   "minAppVersion": "1.4.0",
-  "author": "Cecilia May",
-  "fundingUrl": {
-    "Ko-fi": "https://ko-fi.com/ceciliamay"
-  }
+  "author": "Gabriel Nakic"
 }

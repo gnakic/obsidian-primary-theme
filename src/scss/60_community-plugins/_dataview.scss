@@ -1,0 +1,17 @@
+/*────────── [Community Plugin] Dataview by Michael Brenan ──────────*/
+
+table.dataview.table-view-table {
+    border: 1px solid var(--table-header-border-color);
+
+    th.table-view-th {
+        border-bottom: 1px solid var(--table-header-border-color);
+        border-right: 1px solid var(--table-header-border-color);
+    }
+
+    tbody.table-view-tbody {
+        td {
+        border-bottom: 1px solid var(--table-header-border-color);
+        border-right: 1px solid var(--table-header-border-color);
+        }
+    }
+}

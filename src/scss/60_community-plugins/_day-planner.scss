@@ -2,7 +2,7 @@
 
 .workspace-leaf-content {
     // Timeline View at .mod-left / .mod-right
-    &[data-type=timeline] {
+    &[data-type=planner-timeline] {
         // fix so that icons are evenly aligned
         // and spacing is adjusted relative to width of .mod-*
         .header.header.header {
@@ -43,11 +43,16 @@
         .clickable-icon.clickable-icon[aria-label="Go to file"] {
             font-variant-numeric: tabular-nums;
             color: var(--nav-item-color-active);
+            // background-color: var(--color-accent);;
             background: var(--nav-item-background-active);
             font-weight: var(--nav-item-weight-active);
             // box-shadow: var(--nav-item-shadow-active);
             box-shadow: var(--nav-file-shadow-active);
             padding: 0.4em 0.75em 0.45em;
+
+            &.today {
+                background-color: var(--color-accent);
+            }
 
             &:active {
                 opacity: 0.5;
@@ -64,7 +69,7 @@
     }
 
     // Weekly View at .mod-root
-    &[data-type=weekly] {
+    &[data-type=planner-weekly] {
         background: var(--editor-bg-color);
 
         .view-content {
@@ -110,8 +115,8 @@
 }
 
 // Timeline and Weekly View
-.workspace-leaf-content[data-type=timeline],
-.workspace-leaf-content[data-type=weekly] {
+.workspace-leaf-content[data-type=planner-timeline],
+.workspace-leaf-content[data-type=planner-weekly] {
     .stretcher:not(.scroller .stretcher) {
         padding: var(--size-4-3) 0 0;
     }

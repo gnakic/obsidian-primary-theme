@@ -8050,32 +8050,32 @@ body.alt-folder-icons .nav-folder .tree-item-icon:not(.is-collapsed) svg.right-t
 }
 
 /*────────── [Community Plugin] Day Planner by Ivan Lednev ──────────*/
-.workspace-leaf-content[data-type=timeline] .header.header.header {
+.workspace-leaf-content[data-type=planner-timeline] .header.header.header {
   display: flex;
   justify-content: space-around;
 }
-.workspace-leaf-content[data-type=timeline] .controls {
+.workspace-leaf-content[data-type=planner-timeline] .controls {
   border-bottom: none;
 }
-.workspace-leaf-content[data-type=timeline] .controls .controls {
+.workspace-leaf-content[data-type=planner-timeline] .controls .controls {
   gap: unset;
 }
-.workspace-leaf-content[data-type=timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon) {
+.workspace-leaf-content[data-type=planner-timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon) {
   color: var(--icon-color);
   flex-basis: unset;
   --control-button-border: none !important;
 }
-.workspace-leaf-content[data-type=timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon):hover {
+.workspace-leaf-content[data-type=planner-timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon):hover {
   color: var(--icon-color-hover);
 }
-.workspace-leaf-content[data-type=timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon):active {
+.workspace-leaf-content[data-type=planner-timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon):active {
   color: var(--icon-color-focused);
 }
-.workspace-leaf-content[data-type=timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon).is-active {
+.workspace-leaf-content[data-type=planner-timeline] .clickable-icon.clickable-icon:not(.header-cell .clickable-icon).is-active {
   color: var(--icon-color-active);
   background: var(--icon-bg-active);
 }
-.workspace-leaf-content[data-type=timeline] .clickable-icon.clickable-icon[aria-label="Go to file"] {
+.workspace-leaf-content[data-type=planner-timeline] .clickable-icon.clickable-icon[aria-label="Go to file"] {
   font-variant-numeric: tabular-nums;
   color: var(--nav-item-color-active);
   background: var(--nav-item-background-active);
@@ -8083,100 +8083,116 @@ body.alt-folder-icons .nav-folder .tree-item-icon:not(.is-collapsed) svg.right-t
   box-shadow: var(--nav-file-shadow-active);
   padding: 0.4em 0.75em 0.45em;
 }
-.workspace-leaf-content[data-type=timeline] .clickable-icon.clickable-icon[aria-label="Go to file"]:active {
+.workspace-leaf-content[data-type=planner-timeline] .clickable-icon.clickable-icon[aria-label="Go to file"].today {
+  background-color: var(--color-accent);
+}
+.workspace-leaf-content[data-type=planner-timeline] .clickable-icon.clickable-icon[aria-label="Go to file"]:active {
   opacity: 0.5;
   transition: none;
 }
-.workspace-leaf-content[data-type=timeline] .stretcher {
+.workspace-leaf-content[data-type=planner-timeline] .stretcher {
   margin: 8px;
   border: none;
   border-radius: var(--radius-l);
   contain: content;
 }
-.workspace-leaf-content[data-type=weekly] {
+.workspace-leaf-content[data-type=planner-weekly] {
   background: var(--editor-bg-color);
 }
-.workspace-leaf-content[data-type=weekly] .view-content {
+.workspace-leaf-content[data-type=planner-weekly] .view-content {
   margin: var(--size-4-2) var(--size-4-2) 0;
   width: auto;
 }
-.workspace-leaf-content[data-type=weekly] .view-content .scroller {
+.workspace-leaf-content[data-type=planner-weekly] .view-content .scroller {
   padding-bottom: var(--size-4-2);
 }
-.workspace-leaf-content[data-type=weekly] .range {
+.workspace-leaf-content[data-type=planner-weekly] .range {
   font-size: var(--font-ui-small);
   color: var(--text-faint);
 }
-.workspace-leaf-content[data-type=weekly] .header-cell {
+.workspace-leaf-content[data-type=planner-weekly] .header-cell {
   border-right: none;
 }
-.workspace-leaf-content[data-type=weekly] .header-row.day-buttons .header-cell.today {
+.workspace-leaf-content[data-type=planner-weekly] .header-row.day-buttons .header-cell.today {
   background: var(--dp-weekday-bg-color);
   font-weight: var(--font-semibold);
 }
-.workspace-leaf-content[data-type=weekly] .today .clickable-icon.clickable-icon {
+.workspace-leaf-content[data-type=planner-weekly] .today .clickable-icon.clickable-icon {
   color: var(--dp-weekday-color);
   padding-bottom: var(--size-4-3);
 }
-.workspace-leaf-content[data-type=weekly] .corner {
+.workspace-leaf-content[data-type=planner-weekly] .corner {
   border-right: none;
 }
-.workspace-leaf-content[data-type=weekly] .hours-container .hour:last-child,
-.workspace-leaf-content[data-type=weekly] .day-column .column .hour-block:last-child {
+.workspace-leaf-content[data-type=planner-weekly] .hours-container .hour:last-child,
+.workspace-leaf-content[data-type=planner-weekly] .day-column .column .hour-block:last-child {
   border-bottom: 1px solid transparent;
 }
 
-.workspace-leaf-content[data-type=timeline] .stretcher:not(.scroller .stretcher),
-.workspace-leaf-content[data-type=weekly] .stretcher:not(.scroller .stretcher) {
+.workspace-leaf-content[data-type=planner-timeline] .stretcher:not(.scroller .stretcher),
+.workspace-leaf-content[data-type=planner-weekly] .stretcher:not(.scroller .stretcher) {
   padding: var(--size-4-3) 0 0;
 }
-.workspace-leaf-content[data-type=timeline] .scroller,
-.workspace-leaf-content[data-type=timeline] .day-column,
-.workspace-leaf-content[data-type=weekly] .scroller,
-.workspace-leaf-content[data-type=weekly] .day-column {
+.workspace-leaf-content[data-type=planner-timeline] .scroller,
+.workspace-leaf-content[data-type=planner-timeline] .day-column,
+.workspace-leaf-content[data-type=planner-weekly] .scroller,
+.workspace-leaf-content[data-type=planner-weekly] .day-column {
   background-color: var(--dp-scroller-bg-color);
 }
-.workspace-leaf-content[data-type=timeline] .padding,
-.workspace-leaf-content[data-type=weekly] .padding {
+.workspace-leaf-content[data-type=planner-timeline] .padding,
+.workspace-leaf-content[data-type=planner-weekly] .padding {
   margin-top: var(--size-2-1);
   margin-bottom: var(--size-2-1);
 }
-.workspace-leaf-content[data-type=timeline] .hours-container,
-.workspace-leaf-content[data-type=weekly] .hours-container {
+.workspace-leaf-content[data-type=planner-timeline] .hours-container,
+.workspace-leaf-content[data-type=planner-weekly] .hours-container {
   background: var(--dp-hours-bg-color);
 }
-.workspace-leaf-content[data-type=timeline] .hour-number-container,
-.workspace-leaf-content[data-type=weekly] .hour-number-container {
+.workspace-leaf-content[data-type=planner-timeline] .hour-number-container,
+.workspace-leaf-content[data-type=planner-weekly] .hour-number-container {
   font-size: var(--font-ui-smaller);
   font-weight: var(--font-medium);
   font-variant-numeric: tabular-nums;
   margin: var(--size-2-3) 0;
 }
-.workspace-leaf-content[data-type=timeline] .content,
-.workspace-leaf-content[data-type=weekly] .content {
+.workspace-leaf-content[data-type=planner-timeline] .content,
+.workspace-leaf-content[data-type=planner-weekly] .content {
   margin-top: -1px;
   margin-bottom: -1px;
   border-radius: var(--radius-m);
   box-shadow: var(--dp-task-shadow);
 }
-.workspace-leaf-content[data-type=timeline] .markdown-block-content,
-.workspace-leaf-content[data-type=weekly] .markdown-block-content {
+.workspace-leaf-content[data-type=planner-timeline] .markdown-block-content,
+.workspace-leaf-content[data-type=planner-weekly] .markdown-block-content {
   padding: var(--size-2-3);
   padding-left: 0.85em;
 }
-.workspace-leaf-content[data-type=timeline] .rendered-markdown,
-.workspace-leaf-content[data-type=weekly] .rendered-markdown {
+.workspace-leaf-content[data-type=planner-timeline] .rendered-markdown,
+.workspace-leaf-content[data-type=planner-weekly] .rendered-markdown {
   font-size: var(--dp-timebox-font-size);
   --checkbox-size: var(--dp-timebox-font-size);
 }
-.workspace-leaf-content[data-type=timeline] .ball,
-.workspace-leaf-content[data-type=weekly] .ball {
+.workspace-leaf-content[data-type=planner-timeline] .ball,
+.workspace-leaf-content[data-type=planner-weekly] .ball {
   background-color: var(--dp-time-indicator-color);
 }
-.workspace-leaf-content[data-type=timeline] .needle,
-.workspace-leaf-content[data-type=weekly] .needle {
+.workspace-leaf-content[data-type=planner-timeline] .needle,
+.workspace-leaf-content[data-type=planner-weekly] .needle {
   background-color: var(--dp-time-indicator-color);
   z-index: 1;
+}
+
+/*────────── [Community Plugin] Dataview by Michael Brenan ──────────*/
+table.dataview.table-view-table {
+  border: 1px solid var(--table-header-border-color);
+}
+table.dataview.table-view-table th.table-view-th {
+  border-bottom: 1px solid var(--table-header-border-color);
+  border-right: 1px solid var(--table-header-border-color);
+}
+table.dataview.table-view-table tbody.table-view-tbody td {
+  border-bottom: 1px solid var(--table-header-border-color);
+  border-right: 1px solid var(--table-header-border-color);
 }
 
 /*────────── Kanban by mgmeyers ──────────*/
