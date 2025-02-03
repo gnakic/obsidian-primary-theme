@@ -10,12 +10,21 @@
             justify-content: space-around;
         }
 
+        .column {
+            border-right: unset 
+        }
+
         .controls {
             border-bottom: none;
         }
 
         .controls .controls {
             gap: unset;
+        }
+
+        // left column hour number
+        .hours-container {
+            background: var(--dp-hours-bg-color);
         }
 
         // make header buttons consistent with nav-header-buttons in obsidian
@@ -60,8 +69,9 @@
             }
         }
 
-        .stretcher {
-            margin: 8px;
+        .scroller {
+            margin-left: 8px;
+            margin-right: 8px;
             border: none;
             border-radius: var(--radius-l);
             contain: content;
@@ -79,6 +89,15 @@
             .scroller {
                 padding-bottom: var(--size-4-2);
             }
+        }
+
+        .header {
+            box-shadow: var(--shadow-bottom-alt);
+        }
+
+        .controls-sidebar {
+            border-left: unset;
+            box-shadow: var(--shadow-left);
         }
 
         // Range Date on Note Header
@@ -107,8 +126,12 @@
             border-right: none;
         }
 
+        .hours-container {
+            background: var(--background-primary);
+        }
+
         .hours-container .hour:last-child,
-        .day-column .column .hour-block:last-child {
+        .column .column .hour-block:last-child {
             border-bottom: 1px solid transparent;
         }
     }
@@ -117,12 +140,9 @@
 // Timeline and Weekly View
 .workspace-leaf-content[data-type=planner-timeline],
 .workspace-leaf-content[data-type=planner-weekly] {
-    .stretcher:not(.scroller .stretcher) {
-        padding: var(--size-4-3) 0 0;
-    }
 
     .scroller,
-    .day-column {
+    .column {
         background-color: var(--dp-scroller-bg-color);
     }
 
@@ -130,11 +150,6 @@
     .padding {
         margin-top: var(--size-2-1);
         margin-bottom: var(--size-2-1);
-    }
-
-    // left column hour number
-    .hours-container {
-        background: var(--dp-hours-bg-color);
     }
 
     .hour-number-container {

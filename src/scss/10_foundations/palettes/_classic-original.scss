@@ -1931,8 +1931,8 @@ body {
     }
 
     /* Day Planner by Ivan Lendev */
-    .workspace-leaf-content[data-type="timeline"] .view-content,
-    .workspace-leaf-content[data-type="weekly"] .view-content,
+    .workspace-leaf-content[data-type="planner-timeline"] .view-content,
+    .workspace-leaf-content[data-type="planner-weekly"] .view-content,
     .workspace-leaf-content[data-type="timeTracker"] .view-content {
         // allows to differentiate colors for timeboxes (current and non-current)
         .content,
@@ -1955,6 +1955,9 @@ body {
         --shadow-right: none;
         --shadow-bottom: 0px 4px 9px rgba(0, 0, 0, 0.025),
             0px 8px 11px rgba(0, 0, 0, 0.045);
+        --shadow-bottom-alt: -4px 9px 5px -1px rgba(0,0,0,0.045);
+        --shadow-left: -3px 0px 6px rgba(0, 0, 0, 0.03),
+            -6px 0px 8px rgba(0, 0, 0, 0.05);
     }
 
     /* Kanban by mgmeyers */
@@ -3453,8 +3456,8 @@ body {
     }
 
     /* Day Planner by Ivan Lendev */
-    .workspace-leaf-content[data-type="timeline"] .view-content,
-    .workspace-leaf-content[data-type="weekly"] .view-content,
+    .workspace-leaf-content[data-type="planner-timeline"] .view-content,
+    .workspace-leaf-content[data-type="planner-weekly"] .view-content,
     .workspace-leaf-content[data-type="timeTracker"] .view-content {
         // allows to differentiate colors for timeboxes (current and non-current)
         .content,
@@ -3477,6 +3480,9 @@ body {
         --shadow-right: none;
         --shadow-bottom: 0px 4px 9px rgba(0, 0, 0, 0.08),
             0px 8px 11px rgba(0, 0, 0, 0.1);
+        --shadow-bottom-alt: -4px 10px 6px -1px rgba(0,0,0,0.099);
+        --shadow-left: -3px 0px 6px rgba(0, 0, 0, 0.05),
+            -6px 0px 8px rgba(0, 0, 0, 0.07);
     }
 
     /* Kanban by mgmeyers */
