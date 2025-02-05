@@ -1,8 +1,10 @@
 /*────────── [Community Plugin] Day Planner by Ivan Lednev ──────────*/
 
 .workspace-leaf-content {
+
     // Timeline View at .mod-left / .mod-right
     &[data-type=planner-timeline] {
+
         // fix so that icons are evenly aligned
         // and spacing is adjusted relative to width of .mod-*
         .header.header.header {
@@ -11,7 +13,7 @@
         }
 
         .column {
-            border-right: unset 
+            border-right: unset;
         }
 
         .controls {
@@ -87,17 +89,58 @@
             width: auto;
 
             .scroller {
-                padding-bottom: var(--size-4-2);
+                padding-bottom: 65px;
             }
         }
 
-        .header {
-            box-shadow: var(--shadow-bottom-alt);
+        .multiday-main-content {
+            svelte-css-wrapper:last-child .column {
+                border-right: unset;
+            }
         }
 
         .controls-sidebar {
-            border-left: unset;
-            box-shadow: var(--shadow-left);
+            .clickable-icon {
+                color: var(--canvas-icon-color);
+
+                svg.svg-icon {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+
+            position: absolute;
+            flex-direction: row;
+            z-index: 2000;
+            left: 50%;
+            transform: translatex(-50%);
+
+            bottom: var(--size-4-4);
+            background: var(--canvas-menu-bg);
+            border: var(--canvas-menu-border);
+            border-radius: var(--radius-m);
+            box-shadow: var(--canvas-menu-shadow);
+
+
+            .clickable-icon:nth-child(1) {
+                order: 5;
+            }
+
+            .clickable-icon:nth-child(2) {
+                order: 6;
+            }
+
+            .clickable-icon:nth-child(3) {
+                order: 4;
+            }
+
+            .clickable-icon:nth-child(4) {
+                order: 3;
+            }
+
+            .clickable-icon:nth-child(5) {
+                order: 1;
+            }
         }
 
         // Range Date on Note Header
@@ -116,11 +159,11 @@
             background: var(--dp-weekday-bg-color);
             font-weight: var(--font-semibold);
         }
-        
+
         .today .clickable-icon.clickable-icon {
             color: var(--dp-weekday-color);
             padding-bottom: var(--size-4-3);
-        }        
+        }
 
         .corner {
             border-right: none;
@@ -172,7 +215,7 @@
         padding: var(--size-2-3);
         padding-left: 0.85em;
     }
-            
+
     .rendered-markdown {
         font-size: var(--dp-timebox-font-size);
         --checkbox-size: var(--dp-timebox-font-size);
