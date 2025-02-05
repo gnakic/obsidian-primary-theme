@@ -8117,14 +8117,44 @@ body.alt-folder-icons .nav-folder .tree-item-icon:not(.is-collapsed) svg.right-t
   width: auto;
 }
 .workspace-leaf-content[data-type=planner-weekly] .view-content .scroller {
-  padding-bottom: var(--size-4-2);
+  padding-bottom: 65px;
 }
-.workspace-leaf-content[data-type=planner-weekly] .header {
-  box-shadow: var(--shadow-bottom-alt);
+.workspace-leaf-content[data-type=planner-weekly] .multiday-main-content svelte-css-wrapper:last-child .column {
+  border-right: unset;
 }
 .workspace-leaf-content[data-type=planner-weekly] .controls-sidebar {
-  border-left: unset;
-  box-shadow: var(--shadow-left);
+  position: absolute;
+  flex-direction: row;
+  z-index: 2000;
+  left: 50%;
+  transform: translatex(-50%);
+  bottom: var(--size-4-4);
+  background: var(--canvas-menu-bg);
+  border: var(--canvas-menu-border);
+  border-radius: var(--radius-m);
+  box-shadow: var(--canvas-menu-shadow);
+}
+.workspace-leaf-content[data-type=planner-weekly] .controls-sidebar .clickable-icon {
+  color: var(--canvas-icon-color);
+}
+.workspace-leaf-content[data-type=planner-weekly] .controls-sidebar .clickable-icon svg.svg-icon {
+  height: 20px;
+  width: 20px;
+}
+.workspace-leaf-content[data-type=planner-weekly] .controls-sidebar .clickable-icon:nth-child(1) {
+  order: 5;
+}
+.workspace-leaf-content[data-type=planner-weekly] .controls-sidebar .clickable-icon:nth-child(2) {
+  order: 6;
+}
+.workspace-leaf-content[data-type=planner-weekly] .controls-sidebar .clickable-icon:nth-child(3) {
+  order: 4;
+}
+.workspace-leaf-content[data-type=planner-weekly] .controls-sidebar .clickable-icon:nth-child(4) {
+  order: 3;
+}
+.workspace-leaf-content[data-type=planner-weekly] .controls-sidebar .clickable-icon:nth-child(5) {
+  order: 1;
 }
 .workspace-leaf-content[data-type=planner-weekly] .range {
   font-size: var(--font-ui-small);
